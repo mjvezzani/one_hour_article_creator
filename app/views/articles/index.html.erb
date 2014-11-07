@@ -1,9 +1,10 @@
 <h1>Here are all your articles</h1>
 <hr/>
+<h3><%= link_to 'Create a new article', new_article_path %></h3>
 
 <% @articles.each do |article| %>
   <div class='article-container'>
-    <h3><%= article.title %></h3>
+    <h3><%= link_to article.title, article_path(article) %></h3>
     <p><%= article.author %></h3>
   </div>
 <% end %>
